@@ -86,15 +86,14 @@ th, td {
 
 .columnfood {
   float: left;
-  width: 45%;
-  padding-top: 90px;
+  width: 90%;
+  padding-top: 10%;
   padding-left: 10%;
   height: 300px;
 }
 
 .columnworkout {
-  float: left;
-  width: 45%;
+  width: 60%;
   padding-top: 90px;
   padding-left: 5%;
   height: 300px; /* Should be removed. Only for demonstration */
@@ -137,7 +136,7 @@ th, td {
 .wrap{
   width: 30%;
   position: absolute;
-  top: 30%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -149,7 +148,7 @@ th, td {
 	<div class="topnav">
     <a style="color: White; pointer-events: none; padding-right: 20%; width: 14%">Gain&Lose</a>
     <a class="active" href="Index_Login.php">Home</a>
-    <a href="#news">Food Cal</a>
+    <a>Food Cal</a>
     <a href="#contact">Workout Plan</a>
     <a href="#about">Share</a>
     <a href="#about">Market</a>
@@ -182,39 +181,40 @@ th, td {
   <div class="columnfood">
     <table style="width:100%; background-color: rgb(255,255,255, 0.6);">
       <tr>
-        <th style="float: left">Breakfast</th>
         <th></th>
-        <th style="float: right"><a href="Foodplan.php?Ftype=B"><i class="fas fa-plus-circle"></i></a></th>
-      </tr>
-      <tr>
-        <td>testing1</td> 
-        <td>300 lb</td>
-        <td style="float: right"><button>edit</button></td>
-      </tr>
-      <tr>
-        <th style="float: left">Lunch</th>
+        <th>Food Name</th>
+        <th>Calories</th>
+        <th>Total Fat</th>
+        <th>Total Carbohydrate</th>
+        <th>Portein</th>
         <th></th>
-        <th style="float: right"><a href="Foodplan.php?Ftype=L"><i class="fas fa-plus-circle"></i></a></th>
       </tr>
       <tr>
-        <td>testing1</td> 
-        <td>300 lb</td>
-        <td style="float: right"><button>edit</button></td>
+        <td><center><img src="Images/Egg.jpg" height="45" width="45"></center></td>
+        <td><center>Egg/Each</center></td>
+        <td><center>78</center></td>
+        <td><center>5g</center></td> 
+        <td><center>0.6g</center></td>
+        <td><center>6g</center></td>
+        <td style="float: right"><button><i class="fas fa-plus-circle"></i></button></td>
       </tr>
       <tr>
-        <th style="float: left">Dinner</th>
-        <th></th>
-        <th style="float: right"><a href="Foodplan.php?Ftype=D"><i class="fas fa-plus-circle"></i></a></th>
+        <td><center><img src="Images/apple.jpg" height="45" width="45"></center></td>
+        <td><center>Apple/Each</center></td>
+        <td><center>78</center></td>
+        <td><center>5g</center></td> 
+        <td><center>0.6g</center></td>
+        <td><center>6g</center></td>
+        <td style="float: right"><button><i class="fas fa-plus-circle"></i></button></td>
       </tr>
       <tr>
-        <td>testing1</td>
-        <td>300 lb</td> 
-        <td style="float: right"><button>edit</button></td>
-      </tr>
-      <tr>
-        <td>testing2</td> 
-        <td>100 lb</td>
-        <td style="float: right"><button>edit</button></td>
+        <td><center><img src="Images/banana.jpg" height="45" width="45"></td>
+        <td><center>Banana/Each</td>
+        <td><center>78</center></td>
+        <td><center>5g</center></td> 
+        <td><center>0.6g</center></td>
+        <td><center>6g</center></td>
+        <td style="float: right"><button><i class="fas fa-plus-circle"></i></button></td>
       </tr>
    </table>
   </div>
