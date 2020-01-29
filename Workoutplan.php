@@ -31,9 +31,9 @@ $bmr = 447.593 + (9.247 * $weight) + (3.098 * $height) - (4.330 * $age);
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
 body {
-  background: url("Images/healthyfood.jpg");
+  background: url("Images/index2.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% ;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -171,7 +171,7 @@ th, td {
   <!-- start with search bar and description   -->
   <div class="wrap">
    <div class="search">
-      <input id="myFoodInput" type="text" class="searchTerm" placeholder="What are you looking for?">
+      <input id="myWorkoutInput" type="text" class="searchTerm" placeholder="What are you looking for?">
       <button type="submit" class="searchButton">
         <i class="fa fa-search"></i>
      </button>
@@ -194,43 +194,24 @@ th, td {
       <thead>
       <tr>
         <th></th>
-        <th>Food Name</th>
-        <th>Calories</th>
-        <th>Total Fat</th>
-        <th>Total Carbohydrate</th>
-        <th>Portein</th>
-        <th>Quantity</th>
+        <th>Workout Name</th>
+        <th>Calories/Hours</th>
+        <th>Hours</th>
         <th></th>
       </tr>
       </thead>
       <tbody id="myFoodTable">
       <tr>
-        <td><center><img src="Images/Egg.jpg" height="45" width="45"></center></td>
-        <td><center>Egg/Each</center></td>
-        <td><center>78</center></td>
-        <td><center>5g</center></td> 
-        <td><center>0.6g</center></td>
-        <td><center>6g</center></td>
+        <td><center><img src="Images/Running.png" height="45" width="45"></center></td>
+        <td><center>Running</center></td>
+        <td><center>100</center></td>
         <td><center><input type="text" name="" style="width: 50px"></center></td>
         <td style="float: right"><button><i class="fas fa-plus-circle"></i></button></td>
       </tr>
       <tr>
-        <td><center><img src="Images/apple.jpg" height="45" width="45"></center></td>
-        <td><center>Apple/Each</center></td>
-        <td><center>78</center></td>
-        <td><center>5g</center></td> 
-        <td><center>0.6g</center></td>
-        <td><center>6g</center></td>
-        <td><center><input type="text" name="" style="width: 50px"></center></td>
-        <td style="float: right"><button><i class="fas fa-plus-circle"></i></button></td>
-      </tr>
-      <tr>
-        <td><center><img src="Images/banana.jpg" height="45" width="45"></td>
-        <td><center>Banana/Each</td>
-        <td><center>78</center></td>
-        <td><center>5g</center></td> 
-        <td><center>0.6g</center></td>
-        <td><center>6g</center></td>
+        <td><center><img src="Images/Swim.png" height="45" width="45"></center></td>
+        <td><center>Swiming</center></td>
+        <td><center>178</center></td>
         <td><center><input type="text" name="" style="width: 50px"></center></td>
         <td style="float: right"><button><i class="fas fa-plus-circle"></i></button></td>
       </tr>
@@ -243,11 +224,11 @@ th, td {
     <a class="w3-bar-item w3-button w3-large" onclick="closeNav()" style="height:70px">×</a>
     <div class="row">
       <div class="columncart">
-        <center><img src="Images/Egg.jpg" height="100" width="100"></center> 
+        <center><img src="Images/Swim.png" height="100" width="100"></center> 
       </div>
       <div class="columncart" style="padding: 15px">
-        <label>Egg</label><br>
-        <text>Quantity: 3</text><br>
+        <label>Swiming</label><br>
+        <text>Hours: 1.5</text><br>
         <button><i class="fas fa-trash-alt"></i> Delete</button>
       </div>
     </div>
@@ -255,7 +236,7 @@ th, td {
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a> -->
-    <button>Done</button>
+    <center><button>Done</button></center>
   </div>
 
 </body>
@@ -263,7 +244,7 @@ th, td {
 
 <script>
 $(document).ready(function(){
-  $("#myFoodInput").on("keyup", function() {
+  $("#myWorkoutInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("#myFoodTable tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)

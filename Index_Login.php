@@ -1,20 +1,20 @@
 <?php
 
-if(isset($_POST["BMR"]))   
-{  
+if(isset($_POST["BMR"]))   {  
 $age = $_POST["age"];
 $height = $_POST["height"];
 $gender = $_POST["gender"];
 $weight = $_POST["weight"];
 $bmr;
-if ($gender == "man") {
-$bmr = 88.362 + (13.397 * $weight) + (4.799 * $height) - (5.677 * $age);
-}
+  if ($gender == "man") {
+    $bmr = 88.362 + (13.397 * $weight) + (4.799 * $height) - (5.677 * $age);
+  }
 else {
-$bmr = 447.593 + (9.247 * $weight) + (3.098 * $height) - (4.330 * $age);
+    $bmr = 447.593 + (9.247 * $weight) + (3.098 * $height) - (4.330 * $age);
+  }
 }
-/*echo $bmr;*/
-}
+
+$DailyCal = 500;
 
 ?>
 
@@ -105,8 +105,8 @@ th, td {
   <!-- start top nav bar   -->
 	<div class="topnav">
     <a style="color: White; pointer-events: none; padding-right: 20%; width: 14%">Gain&Lose</a>
-    <a class="active" href="Index_Login.php">Home</a>
-    <a href="#news">Food Cal</a>
+    <a>Home</a>
+    <a class="active" href="Foodplan.php">Food Cal</a>
     <a href="#contact">Workout Plan</a>
     <a href="#about">Share</a>
     <a href="#about">Market</a>
@@ -118,7 +118,9 @@ th, td {
   <!-- start with percentage graph and description   -->
   <div style="padding-top: 7%; padding-left: 20%">
   <div class="w3-light-grey w3-round-xlarge" style="width: 80%; ">
-    <div class="w3-container w3-blue w3-round-xlarge" style="width:<?php if($bmr != ""){echo "20"."%";}else{echo "0%";}; ?>; background-color: #ff7575 !important" ><?php if($bmr != ""){echo $bmr."%";}else{echo "0";}; ?></div>
+    <div class="w3-container w3-blue w3-round-xlarge" style="width:<?php if($bmr != ""){echo $DailyCal*100/$bmr."%";}else{echo "0%";}; ?>; background-color: #ff7575 !important" >
+      <?php if($bmr != ""){echo round($DailyCal*100/$bmr,2)."%";}else{echo "0";}; ?>  
+    </div>
   </div>
   </div>
   <center style="font-weight: bold; font-size: 20px; color: white">Your Daily Cal: <?php if($bmr != ""){echo $bmr;}else{echo "0";}; ?></center>
@@ -128,15 +130,15 @@ th, td {
   <div style="padding-left: 20%">
   <form method="POST" action="">
     <label>Age: </label>
-    <input type = "text" class = "form-control" name = "age">
-    <label>Length: </label>
-    <input type = "text" class = "form-control" name = "height">
+    <input type = "text" class = "form-control" name = "age">Year,
+    <label>Height: </label>
+    <input type = "text" class = "form-control" name = "height">CM,
     <label>Male</label>
-    <input type = "radio" name ="gender" value = "man"/>
+    <input type = "radio" name ="gender" value = "man"/>,
     <label>Female </label>
-    <input type = "radio" name ="gender" value = "woman"/>
+    <input type = "radio" name ="gender" value = "woman"/>,
     <label>Weight: </label>
-    <input type = "text" class = "form-control" name = "weight">
+    <input type = "text" class = "form-control" name = "weight">KG
     <button class = "btn btn-warning" type = "submit" name = "BMR"> Submit</button>
   </form>
   </div>
@@ -199,7 +201,7 @@ th, td {
         <th style="float: left">Cardio</th>
         <th></th>
         <th></th>
-        <th style="float: right"><button style="border-radius: 50%;"><i class="fas fa-plus-circle"></i></button></th>
+        <th style="float: right"><a href="Workoutplan.php?Wtype=C"><i class="fas fa-plus-circle"></i></a></th>
       </tr>
       <tr>
         <td>Running</td>
@@ -217,7 +219,7 @@ th, td {
         <th style="float: left">Anaerobic</th>
         <th></th>
         <th></th>
-        <th style="float: right"><button style="border-radius: 50%;"><i class="fas fa-plus-circle"></i></button></th>
+        <th style="float: right"><a href="Workoutplan.php?Wtype=S"><i class="fas fa-plus-circle"></i></a></th>
       </tr>
       <tr>
         <td>Weight Lifting</td>

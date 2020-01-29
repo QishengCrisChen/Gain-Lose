@@ -12,6 +12,9 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
 body {
@@ -60,155 +63,46 @@ body {
   font-size: 17px;
 }
 
-input, button
-{
-    color: #fff;
-    font-family: Nunito;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    background-color: transparent;
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
 }
 
-#cover
-{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    width: 40%;
-    height: 50px;
-    padding: 35px;
-    margin: -83px auto 0 auto;
-    background-color: #ff7575;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
-    transform: scale(0.6);
+.searchTerm {
+  width: 100%;
+  border: 3px solid #ff7575;
+  border-right: none;
+  padding: 5px;
+  height: 40px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
 }
 
-.tb
-{
-    display: table;
-    width: 100%;
+.searchTerm:focus{
+  color: #434343;
 }
 
-.td
-{
-    display: table-cell;
-    vertical-align: middle;
+.searchButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ff7575;
+  background: #ff7575;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-/*form
-{
-    height: 96px;
-}*/
-
-input[type="text"]
-{
-    width: 100%;
-    height: 50px;
-    font-size: 60px;
-    line-height: 1;
-}
-
-input[type="text"]::placeholder
-{
-    color: #e16868;
-}
-
-#s-cover
-{
-    width: 1px;
-    padding-left: 35px;
-}
-
-button
-{
-    position: relative;
-    display: block;
-    width: 84px;
-    height: 50px;
-    cursor: pointer;
-}
-
-#s-circle
-{
-    position: relative;
-    top: -8px;
-    left: 0;
-    width: 23px;
-    height: 23px;
-    margin-top: 0;
-    border-width: 15px;
-    border: 15px solid #fff;
-    background-color: transparent;
-    border-radius: 50%;
-    transition: 0.5s ease all;
-}
-
-button span
-{
-    position: absolute;
-    top: 40px;
-    left: 30px;
-    display: block;
-    width: 40px;
-    height: 15px;
-    background-color: transparent;
-    border-radius: 10px;
-    transform: rotateZ(52deg);
-    transition: 0.5s ease all;
-}
-
-button span:before, button span:after
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 45px;
-    height: 15px;
-    background-color: #fff;
-    border-radius: 10px;
-    transform: rotateZ(0);
-    transition: 0.5s ease all;
-}
-
-#s-cover:hover #s-circle
-{
-    top: -1px;
-    width: 67px;
-    height: 15px;
-    border-width: 0;
-    background-color: #fff;
-    border-radius: 20px;
-}
-
-#s-cover:hover span
-{
-    top: 50%;
-    left: 56px;
-    width: 25px;
-    margin-top: -9px;
-    transform: rotateZ(0);
-}
-
-#s-cover:hover button span:before
-{
-    bottom: 11px;
-    transform: rotateZ(52deg);
-}
-
-#s-cover:hover button span:after
-{
-    bottom: -11px;
-    transform: rotateZ(-52deg);
-}
-#s-cover:hover button span:before, #s-cover:hover button span:after
-{
-    right: -6px;
-    width: 40px;
-    background-color: #fff;
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 </style>
@@ -228,21 +122,13 @@ button span:before, button span:after
   <!-- end top nav bar   -->
 
   <!-- start with search bar and description   -->
-  <div>
-    <h2 style="color: white">information and description</h2>
-    <div id="cover">
-     <form method="get" action="">
-      <div class="tb">
-       <div class="td"><input type="text" placeholder="Search Food Cal" required></div>
-        <div class="td" id="s-cover">
-          <button type="submit">
-           <div id="s-circle"></div>
-           <span></span>
-          </button>
-        </div>
-      </div>
-     </form>
-    </div>
+  <div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
   </div>
   <!-- end with search bar and description   -->
 
